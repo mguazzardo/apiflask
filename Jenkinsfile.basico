@@ -5,6 +5,11 @@ pipeline {
  agent any
   stages {
 
+// Deberia hacer un test si el container esta corriendo
+// pero sera para otra branch....
+
+
+
     stage('Install Registry') {
             steps {
                 sh '''
