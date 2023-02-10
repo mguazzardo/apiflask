@@ -42,7 +42,18 @@ pipeline {
         docker rm -f flaskapi
            '''
         }
-      }
+      }  // stage
+      
+      stage('Push Registry') {
+      steps{
+
+        sh '''
+           docker tag flaskapi:latest 127.0.0.1:5000/flaskapi:latest
+           docker push 127.0.0.1:5000/flaskapi:latest
+           '''
+        }
+      }  // stage
+      
  
     
     }   
